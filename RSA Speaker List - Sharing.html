@@ -1,0 +1,2808 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta Employer="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker List</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for better aesthetics */
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        .container {
+            max-width: 90%; /* Fluid width for responsiveness */
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        table {
+            width: 100%;
+            border-collapse: separate; /* Allows for rounded corners on cells */
+            border-spacing: 0;
+        }
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb; /* Light border for rows */
+        }
+        th {
+            background-color: #1f2937; /* Darker header background */
+            color: #ffffff; /* White text for header */
+            font-weight: 600; /* Semi-bold */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        tr:last-child td {
+            border-bottom: none; /* No border on the last row */
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb; /* Slightly different background for even rows */
+        }
+        tr:hover {
+            background-color: #eef2ff; /* Light blue on hover */
+            cursor: pointer;
+        }
+        /* Rounded corners for the table and its first/last cells */
+        table {
+            border-radius: 0.75rem;
+            overflow: hidden; /* Ensures content respects border-radius */
+        }
+        th:first-child {
+            border-top-left-radius: 0.75rem;
+        }
+        th:last-child {
+            border-top-right-radius: 0.75rem;
+        }
+        tr:last-child td:first-child {
+            border-bottom-left-radius: 0.75rem;
+        }
+        tr:last-child td:last-child {
+            border-bottom-right-radius: 0.75rem;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+                margin: 1rem auto;
+            }
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                border: 1px solid #e5e7eb;
+                margin-bottom: 0.75rem;
+                border-radius: 0.5rem;
+                overflow: hidden;
+            }
+            td {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 45%;
+                padding-left: 1rem;
+                white-space: nowrap;
+                font-weight: 600;
+                text-align: left;
+            }
+            /* Specific styling for the first column on mobile */
+            td:first-of-type {
+                background-color: #f3f4f6;
+                font-weight: bold;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+            }
+            td:last-of-type {
+                border-bottom-left-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Conference Speakers</h1>
+        <div class="overflow-x-auto rounded-xl">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="py-3 px-4">Employer</th>
+                        <th class="py-3 px-4">Position Title</th>
+                        <th class="py-3 px-4">First Name, Last Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Employer">Accenture</td>
+                        <td data-label="Position Title">Security Delivery Senior Manager</td>
+                        <td data-label="First Name, Last Name">Mario Lacroix</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ADP</td>
+                        <td data-label="Position Title">Chief Enterprise Architect</td>
+                        <td data-label="First Name, Last Name">Ken Atkins</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ADP</td>
+                        <td data-label="Position Title">Product Leader in Application Security</td>
+                        <td data-label="First Name, Last Name">Seena Iype</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Advocate Health</td>
+                        <td data-label="Position Title">Director, Cybersecurity and IoT Risk</td>
+                        <td data-label="First Name, Last Name">Christopher Lau</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Aikido Security</td>
+                        <td data-label="Position Title">CEO & CTO</td>
+                        <td data-label="First Name, Last Name">Willem Delbare</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Aikido Security</td>
+                        <td data-label="Position Title">Security Researcher</td>
+                        <td data-label="First Name, Last Name">Mackenzie Jackson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Aim Security</td>
+                        <td data-label="Position Title">Sr. Solutions Engineer</td>
+                        <td data-label="First Name, Last Name">Joel McKown</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Akamai</td>
+                        <td data-label="Position Title">SVP & GM Application Security</td>
+                        <td data-label="First Name, Last Name">Rupesh Chokshi</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Altitude Cyber</td>
+                        <td data-label="Position Title">Founder & Managing Partner</td>
+                        <td data-label="First Name, Last Name">Dino Boukouris</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Altitude Cyber</td>
+                        <td data-label="Position Title">Partner & Co-Founder</td>
+                        <td data-label="First Name, Last Name">Domenic Perri</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Amazon Web Services</td>
+                        <td data-label="Position Title">Director</td>
+                        <td data-label="First Name, Last Name">Jenny Brinkley</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Amazon Web Services</td>
+                        <td data-label="Position Title">Senior Security Consultant</td>
+                        <td data-label="First Name, Last Name">Magesh Dhanasekaran</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Amazon Web Services</td>
+                        <td data-label="Position Title">Senior Security Architect</td>
+                        <td data-label="First Name, Last Name">Ravi Kadiri</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Analyst1</td>
+                        <td data-label="Position Title">Chief Security Strategist</td>
+                        <td data-label="First Name, Last Name">Jon DiMaggio</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Andreessen Horowitz</td>
+                        <td data-label="Position Title">Senior National Security Advisor</td>
+                        <td data-label="First Name, Last Name">Matthew Cronin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Anthropic</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Jason Clinton</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Apogee Global RMS</td>
+                        <td data-label="Position Title">CEO</td>
+                        <td data-label="First Name, Last Name">M K Palmore</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Aqua Security</td>
+                        <td data-label="Position Title">Director of Threat Intelligence</td>
+                        <td data-label="First Name, Last Name">Assaf Morag</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Aqua Security</td>
+                        <td data-label="Position Title">Director of Security Research</td>
+                        <td data-label="First Name, Last Name">Yakir Kadkoda</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ares Management</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Jared Nussbaum</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Armis</td>
+                        <td data-label="Position Title">CTO & Co-Founder</td>
+                        <td data-label="First Name, Last Name">Nadir Izrael</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ARPA-H</td>
+                        <td data-label="Position Title">Director, Resilient Systems</td>
+                        <td data-label="First Name, Last Name">Jen Roberts</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Artico Search</td>
+                        <td data-label="Position Title">Partner, Cybersecurity Practice</td>
+                        <td data-label="First Name, Last Name">Steve Martano</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">AT&T</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Rich Baich</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">AT&T</td>
+                        <td data-label="Position Title">AVP, Product Management & Dev Cybersecurity</td>
+                        <td data-label="First Name, Last Name">Senthil Ramakrishnan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">AT&T Business</td>
+                        <td data-label="Position Title">Director, Product Management & Development</td>
+                        <td data-label="First Name, Last Name">Will Amores</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Atlantic Council</td>
+                        <td data-label="Position Title">Non-Resident Fellow</td>
+                        <td data-label="First Name, Last Name">Jochai Ben-Avie</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Auburn University</td>
+                        <td data-label="Position Title">Director, McCrary Institute for Cyber and Critical Infrastructure Security</td>
+                        <td data-label="First Name, Last Name">Frank Cilluffo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">AWS and UPenn</td>
+                        <td data-label="Position Title">Senior Principal Applied Scientist and Professor</td>
+                        <td data-label="First Name, Last Name">Tal Rabin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Axonius</td>
+                        <td data-label="Position Title">VP of Legal</td>
+                        <td data-label="First Name, Last Name">Edy Glozman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Axonius</td>
+                        <td data-label="Position Title">Field CISO</td>
+                        <td data-label="First Name, Last Name">Liz Morton</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">BAMFIST and Humanis Technologies</td>
+                        <td data-label="Position Title">Chief Human and Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Mike Elkins</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Banco do Brasil</td>
+                        <td data-label="Position Title">CTI Leader</td>
+                        <td data-label="First Name, Last Name">Carlos Gonçalves</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Bandler Law Firm PLLS</td>
+                        <td data-label="Position Title">Principal & Founder</td>
+                        <td data-label="First Name, Last Name">John Bandler</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Bank Policy Institute</td>
+                        <td data-label="Position Title">Senior Vice President, Deputy Head of BITS</td>
+                        <td data-label="First Name, Last Name">Heather Hogsett</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ballistic Ventures</td>
+                        <td data-label="Position Title">Founder & General Partner</td>
+                        <td data-label="First Name, Last Name">Kevin Mandia</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ballistic Ventures</td>
+                        <td data-label="Position Title">General Partner</td>
+                        <td data-label="First Name, Last Name">Barmak Meftah</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Barclays</td>
+                        <td data-label="Position Title">Global Head of Cybercrime & Cyber Fraud Fusion</td>
+                        <td data-label="First Name, Last Name">Senan Moloney</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">BASE4 Security</td>
+                        <td data-label="Position Title">Cybersecurity Services Director</td>
+                        <td data-label="First Name, Last Name">Federico Pacheco</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Bedrock Security</td>
+                        <td data-label="Position Title">Chief Security Officer</td>
+                        <td data-label="First Name, Last Name">George Gerchow</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Beihang University</td>
+                        <td data-label="Position Title">Professor</td>
+                        <td data-label="First Name, Last Name">Jiqiang Lyu</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Berkshire Partners</td>
+                        <td data-label="Position Title">Operating Executive</td>
+                        <td data-label="First Name, Last Name">Rich Adduci</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">BILL Holdings, Inc</td>
+                        <td data-label="Position Title">Director, Information Security</td>
+                        <td data-label="First Name, Last Name">Gourav Nagar</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Binarly</td>
+                        <td data-label="Position Title">Founder & CEO</td>
+                        <td data-label="First Name, Last Name">Alex Matrosov</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Binarly Inc</td>
+                        <td data-label="Position Title">Vulnerability Research Lead</td>
+                        <td data-label="First Name, Last Name">Fabio Pagani</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Bitdefender</td>
+                        <td data-label="Position Title">Director, IoT</td>
+                        <td data-label="First Name, Last Name">Dan Berte</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Bitdefender</td>
+                        <td data-label="Position Title">Senior Security Researcher</td>
+                        <td data-label="First Name, Last Name">Alexandru Lazar</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Bitsight</td>
+                        <td data-label="Position Title">Principal Research Scientist</td>
+                        <td data-label="First Name, Last Name">Benjamin Edwards</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Black Duck</td>
+                        <td data-label="Position Title">Principal Product Manager</td>
+                        <td data-label="First Name, Last Name">John McShane</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Black Hills Information Security</td>
+                        <td data-label="Position Title">Red Team Practice Lead</td>
+                        <td data-label="First Name, Last Name">Michael Allen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Black Hills Information Security</td>
+                        <td data-label="Position Title">Content & Community Director</td>
+                        <td data-label="First Name, Last Name">Jason Blanchard</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">BlackCloak</td>
+                        <td data-label="Position Title">CEO & Founder</td>
+                        <td data-label="First Name, Last Name">Chris Pierson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">BlackGirlsHack</td>
+                        <td data-label="Position Title">Executive Director</td>
+                        <td data-label="First Name, Last Name">Tennisha Martin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">BlackGirlsHack</td>
+                        <td data-label="Position Title">Chief Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Aleise McGowan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Blackbaud, Inc.</td>
+                        <td data-label="Position Title">Senior Vice President & General Counsel</td>
+                        <td data-label="First Name, Last Name">Jon Olson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Blumira</td>
+                        <td data-label="Position Title">Security Strategist</td>
+                        <td data-label="First Name, Last Name">Zoe Lindsey</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Boise State University</td>
+                        <td data-label="Position Title">Researcher</td>
+                        <td data-label="First Name, Last Name">Dooshima Dabo'Adzuana</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Booz Allen Hamilton</td>
+                        <td data-label="Position Title">Cybersecurity Policy & Compliance Analyst</td>
+                        <td data-label="First Name, Last Name">Richard Aldrich</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Broadcom</td>
+                        <td data-label="Position Title">Fellow, Symantec Threat Hunter Team</td>
+                        <td data-label="First Name, Last Name">Eric Chien</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Broadcom</td>
+                        <td data-label="Position Title">Distinguished Engineer</td>
+                        <td data-label="First Name, Last Name">Roelof du Toit</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Broadcom</td>
+                        <td data-label="Position Title">Vice President & General Manager, Enterprise Security Group</td>
+                        <td data-label="First Name, Last Name">Jason Rolleston</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Bundesdruckerei GmbH</td>
+                        <td data-label="Position Title">SVP, Innovations</td>
+                        <td data-label="First Name, Last Name">Kim Nguyen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Bytewhisper Security</td>
+                        <td data-label="Position Title">CEO</td>
+                        <td data-label="First Name, Last Name">John Dickson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Capital One</td>
+                        <td data-label="Position Title">Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Deepak Behal</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Capital One</td>
+                        <td data-label="Position Title">Cybersecurity CTO</td>
+                        <td data-label="First Name, Last Name">Mike Benjamin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Capital One</td>
+                        <td data-label="Position Title">Chief Technology Risk Officer, EVP</td>
+                        <td data-label="First Name, Last Name">Andy Ozment</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cato Networks</td>
+                        <td data-label="Position Title">Director, MDR Services</td>
+                        <td data-label="First Name, Last Name">Tal Darsan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cato Networks</td>
+                        <td data-label="Position Title">Chief Security Strategist</td>
+                        <td data-label="First Name, Last Name">Etay Maor</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Center for Internet Security</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Sean Atkinson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Center for Internet Security</td>
+                        <td data-label="Position Title">Senior Director, Information Security</td>
+                        <td data-label="First Name, Last Name">Stephanie Gass</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Center for Internet Security</td>
+                        <td data-label="Position Title">Senior Director of Security Operations and Intelligence</td>
+                        <td data-label="First Name, Last Name">Randy Rose</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cerby</td>
+                        <td data-label="Position Title">Chief Trust Officer</td>
+                        <td data-label="First Name, Last Name">Matthew Chiodi</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CFC Underwriting Ltd</td>
+                        <td data-label="Position Title">Cyber Practice Leader, USA</td>
+                        <td data-label="First Name, Last Name">Michael Phillips</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Checkmarx</td>
+                        <td data-label="Position Title">Security Analyst</td>
+                        <td data-label="First Name, Last Name">Eilon Cohen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Checkmarx</td>
+                        <td data-label="Position Title">Security Research Team Lead</td>
+                        <td data-label="First Name, Last Name">Tal Folkman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Checkmarx</td>
+                        <td data-label="Position Title">Senior Security Researcher</td>
+                        <td data-label="First Name, Last Name">Ori Ron</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cisco</td>
+                        <td data-label="Position Title">Director, Global Security Technologist</td>
+                        <td data-label="First Name, Last Name">Prabhu Barathi</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cisco</td>
+                        <td data-label="Position Title">SVP of Security Products</td>
+                        <td data-label="First Name, Last Name">Raj Chopra</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cisco</td>
+                        <td data-label="Position Title">Senior Vice President and General Manager of the Infrastructure & Security Group</td>
+                        <td data-label="First Name, Last Name">Tom Gillis</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cisco</td>
+                        <td data-label="Position Title">EVP & Chief Product Officer</td>
+                        <td data-label="First Name, Last Name">Jeetu Patel</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cisco</td>
+                        <td data-label="Position Title">Cybersecurity Advisor</td>
+                        <td data-label="First Name, Last Name">Helen Patton</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cisco</td>
+                        <td data-label="Position Title">Director ABM</td>
+                        <td data-label="First Name, Last Name">Randy Pope</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cisco Systems</td>
+                        <td data-label="Position Title">Director, Security Operations</td>
+                        <td data-label="First Name, Last Name">Jessica Oppenheimer</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cisco Systems, Security Business Group</td>
+                        <td data-label="Position Title">Vice President, Cloud + Network Security</td>
+                        <td data-label="First Name, Last Name">Rick Miles</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cisco Talos</td>
+                        <td data-label="Position Title">Researcher</td>
+                        <td data-label="First Name, Last Name">Azim Khodjibaev</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CISO SPOTLIGHT, LLC</td>
+                        <td data-label="Position Title">CISO, Cybersecurity Leadership Author</td>
+                        <td data-label="First Name, Last Name">Todd Fitzgerald</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cloudflare</td>
+                        <td data-label="Position Title">Senior Vice President, Chief Security Officer</td>
+                        <td data-label="First Name, Last Name">Grant Bourzikas</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CNC Consulting</td>
+                        <td data-label="Position Title">Security & Risk Architect</td>
+                        <td data-label="First Name, Last Name">Hoyt L Kesterson II</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cognitive Security Institute</td>
+                        <td data-label="Position Title">Executive Director</td>
+                        <td data-label="First Name, Last Name">Matthew Canham</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Columbia School of Intl and Public Affairs</td>
+                        <td data-label="Position Title">Senior Research Scholar</td>
+                        <td data-label="First Name, Last Name">Jason Healey</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Comcast</td>
+                        <td data-label="Position Title">Distinguished Engineer</td>
+                        <td data-label="First Name, Last Name">Todd Outten</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Commvault</td>
+                        <td data-label="Position Title">Director, Product Marketing</td>
+                        <td data-label="First Name, Last Name">Sam Curcuruto</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Consultant</td>
+                        <td data-label="Position Title">Senior Advisory Consultant for Cyber & National Security</td>
+                        <td data-label="First Name, Last Name">Angela Mauceri</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Conviction Partners LLC</td>
+                        <td data-label="Position Title">Founder & Managing Partner</td>
+                        <td data-label="First Name, Last Name">Sarah Guo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Corelight, Inc</td>
+                        <td data-label="Position Title">Chief Scientist & Co-Founder</td>
+                        <td data-label="First Name, Last Name">Vern Paxson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Corporate Information Technologies</td>
+                        <td data-label="Position Title">Founder and President</td>
+                        <td data-label="First Name, Last Name">Lawrence Cruciana</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Corvus Insurance</td>
+                        <td data-label="Position Title">Vice President, Cyber Underwriting</td>
+                        <td data-label="First Name, Last Name">Peter Hedberg</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">COSIC, KU Leuven</td>
+                        <td data-label="Position Title">PhD Candidate/Research Assistant</td>
+                        <td data-label="First Name, Last Name">Quinten Norga</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CQURE Inc.</td>
+                        <td data-label="Position Title">CEO & Founder</td>
+                        <td data-label="First Name, Last Name">Paula Januszkiewicz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Craig Newmark Philanthropies (Craigslist, Founder)</td>
+                        <td data-label="Position Title">Founder & CSR</td>
+                        <td data-label="First Name, Last Name">Craig Newmark</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Critical Path Security</td>
+                        <td data-label="Position Title">CTO</td>
+                        <td data-label="First Name, Last Name">Patrick Kelley</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Crosspoint Capital Partners</td>
+                        <td data-label="Position Title">Managing Partner</td>
+                        <td data-label="First Name, Last Name">Greg Clark</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CrowdStrike</td>
+                        <td data-label="Position Title">CEO & Founder</td>
+                        <td data-label="First Name, Last Name">George Kurtz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CrowdStrike</td>
+                        <td data-label="Position Title">SVP Intelligence</td>
+                        <td data-label="First Name, Last Name">Adam Meyers</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CrowdStrike</td>
+                        <td data-label="Position Title">CTO, Americas</td>
+                        <td data-label="First Name, Last Name">CRISTIAN RODRIGUEZ</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Crowell & Moring</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Kristin Madigan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Crowell & Moring LLP</td>
+                        <td data-label="Position Title">Privacy & Cybersecurity Counsel</td>
+                        <td data-label="First Name, Last Name">Garylene (Gage) Javier</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyber Aegis LLC</td>
+                        <td data-label="Position Title">President</td>
+                        <td data-label="First Name, Last Name">Charles Blauner</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyber Point Advisory, LLC</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Dd Budiharto</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyber Security Agency of Singapore</td>
+                        <td data-label="Position Title">Deputy Commissioner of Cybersecurity, Deputy Chief Executive (Development)</td>
+                        <td data-label="First Name, Last Name">Kuan Seah Chua</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyber Security Council</td>
+                        <td data-label="Position Title">Head of Cyber Security United Arab Emirates Government</td>
+                        <td data-label="First Name, Last Name">Mohamed Al Kuwaiti</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyber Security Simplified LLC</td>
+                        <td data-label="Position Title">Principal Security Consultant</td>
+                        <td data-label="First Name, Last Name">Michael Ratemo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyber Security Tribe</td>
+                        <td data-label="Position Title">Owner</td>
+                        <td data-label="First Name, Last Name">Dorene Rettas</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CyberArk</td>
+                        <td data-label="Position Title">Vulnerability Research Team Leader</td>
+                        <td data-label="First Name, Last Name">Mark Cherp</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CyberArk</td>
+                        <td data-label="Position Title">Innovation Engineer</td>
+                        <td data-label="First Name, Last Name">Shai Dvash</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CyberArk</td>
+                        <td data-label="Position Title">Sr. Director, Field Technology Office</td>
+                        <td data-label="First Name, Last Name">Justin Hansen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CyberArk</td>
+                        <td data-label="Position Title">Principal Security Researcher</td>
+                        <td data-label="First Name, Last Name">Shaked Reiner</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyberjutsu</td>
+                        <td data-label="Position Title">President & CEO</td>
+                        <td data-label="First Name, Last Name">Mari Galloway</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cybermindz.org</td>
+                        <td data-label="Position Title">Founder</td>
+                        <td data-label="First Name, Last Name">Peter Coroneos</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cybersec Investments</td>
+                        <td data-label="Position Title">Managing Principal / CISO</td>
+                        <td data-label="First Name, Last Name">Fernando Machado</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CyberSN | Secure Diversity</td>
+                        <td data-label="Position Title">Founder & CEO | Founder</td>
+                        <td data-label="First Name, Last Name">Deidre Diamond</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyberspace Solarium Commission 2.0</td>
+                        <td data-label="Position Title">Executive Director</td>
+                        <td data-label="First Name, Last Name">Mark Montgomery</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CybSafe</td>
+                        <td data-label="Position Title">CEO</td>
+                        <td data-label="First Name, Last Name">Oz Alashe</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CybSafe and The University of Kent</td>
+                        <td data-label="Position Title">Director of Science and Research & Associate Professor of Cybersecurity</td>
+                        <td data-label="First Name, Last Name">Jason Nurse</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyentia Institute and Virginia Tech</td>
+                        <td data-label="Position Title">Co-Founder & Professor</td>
+                        <td data-label="First Name, Last Name">Wade Baker</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyentia Institute</td>
+                        <td data-label="Position Title">Executive Fellow</td>
+                        <td data-label="First Name, Last Name">Jack Freund</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">CYE</td>
+                        <td data-label="Position Title">CEO</td>
+                        <td data-label="First Name, Last Name">Reuven Aronashvili</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cygenta</td>
+                        <td data-label="Position Title">Co-Chief Executive Officer</td>
+                        <td data-label="First Name, Last Name">Jessica Barker</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cymulate</td>
+                        <td data-label="Position Title">Vulnerability Research</td>
+                        <td data-label="First Name, Last Name">Elad Beber</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cymulate</td>
+                        <td data-label="Position Title">Security Researcher</td>
+                        <td data-label="First Name, Last Name">Ilan Kalendarov</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Cyera</td>
+                        <td data-label="Position Title">Chief Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Lamont Orange</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Dakota State University</td>
+                        <td data-label="Position Title">President</td>
+                        <td data-label="First Name, Last Name">José-Marie Griffiths</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">DARPA</td>
+                        <td data-label="Position Title">Office Director, Information Innovation Office</td>
+                        <td data-label="First Name, Last Name">Kathleen Fisher</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">DARPA</td>
+                        <td data-label="Position Title">Acting Director</td>
+                        <td data-label="First Name, Last Name">Rob McHenry</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Dassault Systèmes</td>
+                        <td data-label="Position Title">Worldwide Cybersecurity Architecture Manager</td>
+                        <td data-label="First Name, Last Name">Nariman Aga-Tagiyev</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">DataTribe</td>
+                        <td data-label="Position Title">Venture Partner</td>
+                        <td data-label="First Name, Last Name">Rob Joyce</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Datadog</td>
+                        <td data-label="Position Title">Senior Director</td>
+                        <td data-label="First Name, Last Name">Zack Allen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Datadog</td>
+                        <td data-label="Position Title">Staff Security Researcher</td>
+                        <td data-label="First Name, Last Name">Nick Frichette</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Datadog</td>
+                        <td data-label="Position Title">Security Researcher</td>
+                        <td data-label="First Name, Last Name">Ian Kretz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Datadog</td>
+                        <td data-label="Position Title">Senior Security Advocate</td>
+                        <td data-label="First Name, Last Name">Rory McCune</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">DATEV</td>
+                        <td data-label="Position Title">Director for Information Security</td>
+                        <td data-label="First Name, Last Name">Michael Bernhardt</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Debevoise & Plimpton LLP</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Erez Liebermann</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Dell</td>
+                        <td data-label="Position Title">Senior Distinguished Engineer, Software Security Architect</td>
+                        <td data-label="First Name, Last Name">Mohit Arora</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Department of Defense</td>
+                        <td data-label="Position Title">Acting Deputy CIO for Cybersecurity, Acting CISO</td>
+                        <td data-label="First Name, Last Name">Gurpreet Bhatia</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Department of Defense</td>
+                        <td data-label="Position Title">Network System Engineer & Data Security Engineer</td>
+                        <td data-label="First Name, Last Name">Luis Rivas</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Department of Foreign Affairs and Trade</td>
+                        <td data-label="Position Title">Ambassador for Cyber Affairs and Critical Technology</td>
+                        <td data-label="First Name, Last Name">Brendan Dowling</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Devici</td>
+                        <td data-label="Position Title">Chief Executive Officer</td>
+                        <td data-label="First Name, Last Name">Chris Romeo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Dexxit</td>
+                        <td data-label="Position Title">Accessibility Expert</td>
+                        <td data-label="First Name, Last Name">Florian Beijers</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">DG Connect, European Commission</td>
+                        <td data-label="Position Title">Director for Digital Society, Trust & Cybersecurity</td>
+                        <td data-label="First Name, Last Name">Christiane Kirketerp de Viron</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">DHS (former)</td>
+                        <td data-label="Position Title">Former Assistant Secretary for Infrastructure Protection</td>
+                        <td data-label="First Name, Last Name">Brian Harrell</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Digital Charter</td>
+                        <td data-label="Position Title">Sr. Solutions Architect</td>
+                        <td data-label="First Name, Last Name">Jeremy Beam</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Digital Mountain</td>
+                        <td data-label="Position Title">President, CEO & Founder</td>
+                        <td data-label="First Name, Last Name">Julie Lewis</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Diligent</td>
+                        <td data-label="Position Title">Head of Platform</td>
+                        <td data-label="First Name, Last Name">Fred Kneip</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">DistributedApps.ai</td>
+                        <td data-label="Position Title">CAIO</td>
+                        <td data-label="First Name, Last Name">Ken Huang</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Docent Institute</td>
+                        <td data-label="Position Title">President/Founder</td>
+                        <td data-label="First Name, Last Name">John D. Johnson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">DoD Deputy CIO for Cybersecurity</td>
+                        <td data-label="Position Title">Chief, DIB Cybersecurity</td>
+                        <td data-label="First Name, Last Name">Stacy Bostjanick</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Dragos</td>
+                        <td data-label="Position Title">SVP, Intelligence & Services</td>
+                        <td data-label="First Name, Last Name">Kurt Gaudette</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Dragos, Inc.</td>
+                        <td data-label="Position Title">CEO & Founder</td>
+                        <td data-label="First Name, Last Name">Rob Lee</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">DSIT, UK Government</td>
+                        <td data-label="Position Title">Deputy Director</td>
+                        <td data-label="First Name, Last Name">Andrew Elliot</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Elastic</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Mandy Andress</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Elastic Security</td>
+                        <td data-label="Position Title">Product Lead</td>
+                        <td data-label="First Name, Last Name">Mike Nichols</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">EMC ADVISORS</td>
+                        <td data-label="Position Title">CEO & Board Director</td>
+                        <td data-label="First Name, Last Name">Edna Conway</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Enterprise Strategy Group</td>
+                        <td data-label="Position Title">Principal Analyst, Security Operations</td>
+                        <td data-label="First Name, Last Name">Dave Gruber</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ericsson</td>
+                        <td data-label="Position Title">VP, Security Engineering</td>
+                        <td data-label="First Name, Last Name">Anubhav Arora</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ernst & Young LLP</td>
+                        <td data-label="Position Title">Senior Manager, Cybersecurity</td>
+                        <td data-label="First Name, Last Name">John Bates</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ESET</td>
+                        <td data-label="Position Title">Principal Threat Intelligence Researcher</td>
+                        <td data-label="First Name, Last Name">Robert Lipovsky</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ETH Zurich</td>
+                        <td data-label="Position Title">Senior Postdoctoral Researcher</td>
+                        <td data-label="First Name, Last Name">Huayi Duan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Evenstar Cyber, LLC</td>
+                        <td data-label="Position Title">Former Director, Cybersecurity & Infrastructure Security Agency (CISA)</td>
+                        <td data-label="First Name, Last Name">Jen Easterly</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Everfox</td>
+                        <td data-label="Position Title">Field CTO for Digital Transformation and AI</td>
+                        <td data-label="First Name, Last Name">Adam Maruyama</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Exabeam</td>
+                        <td data-label="Position Title">Senior Director, Security Research</td>
+                        <td data-label="First Name, Last Name">Steve Povolny</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ExtraHop Networks</td>
+                        <td data-label="Position Title">Deputy Chief Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Chad LeMaire</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">EY</td>
+                        <td data-label="Position Title">Managing Director - Threat and Vulnerability Management Leader</td>
+                        <td data-label="First Name, Last Name">John Leo Jr</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">FBI</td>
+                        <td data-label="Position Title">Section Chief</td>
+                        <td data-label="First Name, Last Name">Rick Evanchec</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">FBI</td>
+                        <td data-label="Position Title">Deputy Assistant Director, Cyber Operations</td>
+                        <td data-label="First Name, Last Name">Brett Leatherman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">FBI</td>
+                        <td data-label="Position Title">Section Chief</td>
+                        <td data-label="First Name, Last Name">Michael Machtinger</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">FBI</td>
+                        <td data-label="Position Title">Special Agent</td>
+                        <td data-label="First Name, Last Name">Elizabeth Pelker</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">FIERCE</td>
+                        <td data-label="Position Title">Co-founder</td>
+                        <td data-label="First Name, Last Name">Abigail Maines</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">FireMon | Securosis</td>
+                        <td data-label="Position Title">SVP Cloud Security | CEO</td>
+                        <td data-label="First Name, Last Name">Rich Mogull</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">FirstBank</td>
+                        <td data-label="Position Title">Director, Security & Incident Management</td>
+                        <td data-label="First Name, Last Name">Emy Dunfee</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Flawless</td>
+                        <td data-label="Position Title">Film Director & Co-Founder/Co-CEO</td>
+                        <td data-label="First Name, Last Name">Scott Mann</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Food and Ag-ISAC</td>
+                        <td data-label="Position Title">Director</td>
+                        <td data-label="First Name, Last Name">Jonathan Braley</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Forrester</td>
+                        <td data-label="Position Title">VP & Principal Analyst</td>
+                        <td data-label="First Name, Last Name">Jeff Pollard</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Fortinet</td>
+                        <td data-label="Position Title">Chief Security Strategist & VP Global Threat Intelligence</td>
+                        <td data-label="First Name, Last Name">Derek Manky</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Fortitude-RE</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Elliott Franklin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">FTI Consulting</td>
+                        <td data-label="Position Title">Managing Director</td>
+                        <td data-label="First Name, Last Name">Brett Callow</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Futurum Group</td>
+                        <td data-label="Position Title">VP & Practice Lead, DevOps and Application Development</td>
+                        <td data-label="First Name, Last Name">Mitch Ashley</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Gemini</td>
+                        <td data-label="Position Title">Deputy CISO</td>
+                        <td data-label="First Name, Last Name">Shaun Blackburn</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Generate Biomedicines</td>
+                        <td data-label="Position Title">Chief Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Tom Doughty</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Georgetown University CyberSMART Center</td>
+                        <td data-label="Position Title">Senior Fellow</td>
+                        <td data-label="First Name, Last Name">Carole House</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">GCHQ</td>
+                        <td data-label="Position Title">Director</td>
+                        <td data-label="First Name, Last Name">Anne Keast-Butler</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Glasswing Ventures</td>
+                        <td data-label="Position Title">Managing Partner</td>
+                        <td data-label="First Name, Last Name">Rick Grinnell</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Global Cyber Alliance</td>
+                        <td data-label="Position Title">Director, Common Good Initiatives</td>
+                        <td data-label="First Name, Last Name">Kayle Giroud</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">GlobalPlatform and Thales Digital Identity and Security</td>
+                        <td data-label="Position Title">Chair, EUDI Wallet Task Force, Head of Standardization</td>
+                        <td data-label="First Name, Last Name">Jean-Daniel Aussel</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Glilot Capital Partners</td>
+                        <td data-label="Position Title">Managing Partner</td>
+                        <td data-label="First Name, Last Name">Arik Kleinstein</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Gonville and Caius College, Cambridge</td>
+                        <td data-label="Position Title">Honorary Fellow</td>
+                        <td data-label="First Name, Last Name">Whitfield Diffie</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google</td>
+                        <td data-label="Position Title">EMEA Security Practice Lead</td>
+                        <td data-label="First Name, Last Name">Davide Annovazzi</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google</td>
+                        <td data-label="Position Title">Senior Staff Software Engineer</td>
+                        <td data-label="First Name, Last Name">Oliver Chang</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google</td>
+                        <td data-label="Position Title">Director</td>
+                        <td data-label="First Name, Last Name">Chris Corde</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google</td>
+                        <td data-label="Position Title">Threat Intelligence Strategist</td>
+                        <td data-label="First Name, Last Name">Vicente Diaz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google</td>
+                        <td data-label="Position Title">Principal Digital Arsonist</td>
+                        <td data-label="First Name, Last Name">Daniel Fabian</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google</td>
+                        <td data-label="Position Title">Director</td>
+                        <td data-label="First Name, Last Name">David LaBianca</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google</td>
+                        <td data-label="Position Title">VP, Google Threat Intelligence</td>
+                        <td data-label="First Name, Last Name">Sandra Joyce</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google (Mandiant)</td>
+                        <td data-label="Position Title">Principal Security Architect</td>
+                        <td data-label="First Name, Last Name">Rupa Mukherjee</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google Cloud</td>
+                        <td data-label="Position Title">Senior Staff Security Advisor</td>
+                        <td data-label="First Name, Last Name">Anton Chuvakin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google DeepMind</td>
+                        <td data-label="Position Title">VP of Security and Privacy</td>
+                        <td data-label="First Name, Last Name">Four Flynn</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Google DeepMind</td>
+                        <td data-label="Position Title">Associate Professor and Senior Staff Research Scientist</td>
+                        <td data-label="First Name, Last Name">Raluca Ada Popa</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Grammarly</td>
+                        <td data-label="Position Title">Security Engineer</td>
+                        <td data-label="First Name, Last Name">Rohit Bansal</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Greylock</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Lee Haney</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Greylock Partners</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Jason Risch</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">GuidePoint Security</td>
+                        <td data-label="Position Title">Field CISO</td>
+                        <td data-label="First Name, Last Name">Emily O'Carroll</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Harry Reid International Airport</td>
+                        <td data-label="Position Title">CITO</td>
+                        <td data-label="First Name, Last Name">Rishma Khimji</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Hellman & Friedman, LLC</td>
+                        <td data-label="Position Title">Senior Operating Executive</td>
+                        <td data-label="First Name, Last Name">James Goddard</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Holly Ventures</td>
+                        <td data-label="Position Title">Managing Partner</td>
+                        <td data-label="First Name, Last Name">John Brennan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">HPE Networking</td>
+                        <td data-label="Position Title">CTO, Security</td>
+                        <td data-label="First Name, Last Name">LE Eduardo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">HSB</td>
+                        <td data-label="Position Title">Cyber Counsel</td>
+                        <td data-label="First Name, Last Name">Monique Ferraro</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">HUMAN Security</td>
+                        <td data-label="Position Title">CMO</td>
+                        <td data-label="First Name, Last Name">May Mitchell</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Humana</td>
+                        <td data-label="Position Title">Lead Cloud Security Engineer</td>
+                        <td data-label="First Name, Last Name">Santosh Datta Bompally</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Hunters</td>
+                        <td data-label="Position Title">Security Research Team Lead</td>
+                        <td data-label="First Name, Last Name">Yonatan Khen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Huntress</td>
+                        <td data-label="Position Title">Principal Security Researcher</td>
+                        <td data-label="First Name, Last Name">John Hammond</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">HydroX AI</td>
+                        <td data-label="Position Title">Chief Operating Officer</td>
+                        <td data-label="First Name, Last Name">Victor Bian</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">I Am The Cavalry (dot org) || IST</td>
+                        <td data-label="Position Title">Founder || Exec in Residence</td>
+                        <td data-label="First Name, Last Name">Joshua Corman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">IANS Research</td>
+                        <td data-label="Position Title">Senior Research Director</td>
+                        <td data-label="First Name, Last Name">Nick Kakolowski</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">IBM</td>
+                        <td data-label="Position Title">Distinguished Engineer & Master Inventor</td>
+                        <td data-label="First Name, Last Name">Jeff Crume</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">IBM</td>
+                        <td data-label="Position Title">Associate Partner</td>
+                        <td data-label="First Name, Last Name">Carsten Horst</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">IBM</td>
+                        <td data-label="Position Title">Global Managing Partner, Cybersecurity Services</td>
+                        <td data-label="First Name, Last Name">Mark Hughes</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">IBM Corporation</td>
+                        <td data-label="Position Title">Chief Engineer, HSM Development</td>
+                        <td data-label="First Name, Last Name">Richard Kisley</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">if(is) / TeleTrusT</td>
+                        <td data-label="Position Title">Chairman</td>
+                        <td data-label="First Name, Last Name">Norbert Pohlmann</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Iguana Cyber</td>
+                        <td data-label="Position Title">Cybersecurity Engineer</td>
+                        <td data-label="First Name, Last Name">Parker Garrison</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Illumio</td>
+                        <td data-label="Position Title">Chief Evangelist</td>
+                        <td data-label="First Name, Last Name">John Kindervag</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Independent</td>
+                        <td data-label="Position Title">Cybersecurity Consultant</td>
+                        <td data-label="First Name, Last Name">Shin Adachi</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Independent</td>
+                        <td data-label="Position Title">Security Engineer</td>
+                        <td data-label="First Name, Last Name">Alexander Bulekov</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Indian Institute of Technology Madras</td>
+                        <td data-label="Position Title">PhD Student</td>
+                        <td data-label="First Name, Last Name">Pallavi Borkar</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Infoblox</td>
+                        <td data-label="Position Title">Chief Legal Officer & EVP, Government Affairs</td>
+                        <td data-label="First Name, Last Name">Wei Chen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Infoblox</td>
+                        <td data-label="Position Title">Staff Threat Researcher</td>
+                        <td data-label="First Name, Last Name">Brent Eskridge</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Infoblox</td>
+                        <td data-label="Position Title">Threat Researcher</td>
+                        <td data-label="First Name, Last Name">Christopher Kim</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Infoblox</td>
+                        <td data-label="Position Title">Principal Threat Researcher</td>
+                        <td data-label="First Name, Last Name">Dave Mitchell</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Information Systems Security Association (ISSA)</td>
+                        <td data-label="Position Title">ISSA AIM Committee Co-Chair, Advisor to the Board</td>
+                        <td data-label="First Name, Last Name">Shawn Murray</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Information Technology Industry Council</td>
+                        <td data-label="Position Title">Vice President of Policy</td>
+                        <td data-label="First Name, Last Name">Courtney Lang</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Infosec</td>
+                        <td data-label="Position Title">VP, Portfolio Product Strategy</td>
+                        <td data-label="First Name, Last Name">Ketron Evans</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Inframetrics Analytics</td>
+                        <td data-label="Position Title">Founder</td>
+                        <td data-label="First Name, Last Name">Tyson Macaulay</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">In-Q-Tel</td>
+                        <td data-label="Position Title">Senior Partner</td>
+                        <td data-label="First Name, Last Name">Katie Gray</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Inscora</td>
+                        <td data-label="Position Title">Chief Product Officer</td>
+                        <td data-label="First Name, Last Name">Pierre-David Oriol</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Institute for Cyber</td>
+                        <td data-label="Position Title">Founder & CEO</td>
+                        <td data-label="First Name, Last Name">Kirsten Davies</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Institute for Security and Technology</td>
+                        <td data-label="Position Title">Chief Trust Officer</td>
+                        <td data-label="First Name, Last Name">Steven Kelly</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Intel</td>
+                        <td data-label="Position Title">VP, Developer Programs</td>
+                        <td data-label="First Name, Last Name">Arun Gupta</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">INTERPOL</td>
+                        <td data-label="Position Title">Immediate Past Director Cybercrime</td>
+                        <td data-label="First Name, Last Name">Craig Jones</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Interos</td>
+                        <td data-label="Position Title">Senior Vice President, Applied AI</td>
+                        <td data-label="First Name, Last Name">Andrea Little Limbago</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">International Committee of the Red Cross (ICRC)</td>
+                        <td data-label="Position Title">Deputy Head, Legal Department – Washington, D.C.</td>
+                        <td data-label="First Name, Last Name">Jonathan Horowitz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Invictus International Consulting, LLC</td>
+                        <td data-label="Position Title">President & COO</td>
+                        <td data-label="First Name, Last Name">Nick Andersen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">IAPP</td>
+                        <td data-label="Position Title">Managing Director, Cybersecurity Law Center</td>
+                        <td data-label="First Name, Last Name">Jim Dempsey</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ISC2</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Jon France</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">JetBlue Airways Corporation</td>
+                        <td data-label="Position Title">Director, Cybersecurity</td>
+                        <td data-label="First Name, Last Name">Eric Olson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Johnson & Johnson</td>
+                        <td data-label="Position Title">Senior Counsel</td>
+                        <td data-label="First Name, Last Name">Scott Jones</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Journal of Cryptographic Engineering</td>
+                        <td data-label="Position Title">Founding Editor in Chief</td>
+                        <td data-label="First Name, Last Name">Çetin Kaya Koç</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">JP Morgan Chase</td>
+                        <td data-label="Position Title">Executive Director, Cybersecurity Architecture</td>
+                        <td data-label="First Name, Last Name">Nicholas Hazelbaker</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">K&L Gates LLP</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Jake Bernstein</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Katilyst</td>
+                        <td data-label="Position Title">Head of Product</td>
+                        <td data-label="First Name, Last Name">Marisa Fagan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Kemper Insurance</td>
+                        <td data-label="Position Title">Chief Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Tomasz Chowanski</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">KeyBank</td>
+                        <td data-label="Position Title">Head of Client Identity Verification</td>
+                        <td data-label="First Name, Last Name">Miguel Navarro</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Keyfactor</td>
+                        <td data-label="Position Title">Chief Security Officer</td>
+                        <td data-label="First Name, Last Name">Chris Hickman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Kindo</td>
+                        <td data-label="Position Title">CSO</td>
+                        <td data-label="First Name, Last Name">Ken Kato</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">KnowBe4</td>
+                        <td data-label="Position Title">Chief Human Risk Management Strategist</td>
+                        <td data-label="First Name, Last Name">Perry Carpenter</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Kopidion</td>
+                        <td data-label="Position Title">Principal</td>
+                        <td data-label="First Name, Last Name">Gregory Conti</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Kopidion</td>
+                        <td data-label="Position Title">Principal</td>
+                        <td data-label="First Name, Last Name">Tom Cross</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">KraftHeinz</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Rico Lafosse</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">KKR</td>
+                        <td data-label="Position Title">Global Cybersecurity Lead (Portfolio CISO)</td>
+                        <td data-label="First Name, Last Name">Paul Harragan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">LevelBlue</td>
+                        <td data-label="Position Title">Director</td>
+                        <td data-label="First Name, Last Name">Santiago Cortes</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">LevelBlue</td>
+                        <td data-label="Position Title">Lead Threat Researcher</td>
+                        <td data-label="First Name, Last Name">Fernando Martinez Sidera</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">LMG Security</td>
+                        <td data-label="Position Title">CEO</td>
+                        <td data-label="First Name, Last Name">Sherri Davidoff</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">LMG Security</td>
+                        <td data-label="Position Title">Director of Training & Research</td>
+                        <td data-label="First Name, Last Name">Matt Durrin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Luddy School of Informatics, Computing, and Engineering at Indiana University</td>
+                        <td data-label="Position Title">Adjunct Professor of Informatics</td>
+                        <td data-label="First Name, Last Name">Allan Friedman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Lumu Technologies</td>
+                        <td data-label="Position Title">DrZeroTrust</td>
+                        <td data-label="First Name, Last Name">Chase Cunningham</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Main Line Health</td>
+                        <td data-label="Position Title">Program Manager</td>
+                        <td data-label="First Name, Last Name">Tony Fiore</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mandiant/Google Cloud</td>
+                        <td data-label="Position Title">Practice Leader, Cyber Crisis Communications</td>
+                        <td data-label="First Name, Last Name">Jennifer Burnside</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mandiant/Google Cloud</td>
+                        <td data-label="Position Title">Senior Staff Software Engineer</td>
+                        <td data-label="First Name, Last Name">Bharath Chandrasekhar</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mandiant/Google Cloud</td>
+                        <td data-label="Position Title">Senior Director, Gemini Product & UX, Cloud Security</td>
+                        <td data-label="First Name, Last Name">Steph Hay</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mastercard</td>
+                        <td data-label="Position Title">Deputy Chief Security Officer</td>
+                        <td data-label="First Name, Last Name">Alissa Abdullah</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mastercard</td>
+                        <td data-label="Position Title">Director, Cyber Talent</td>
+                        <td data-label="First Name, Last Name">Katie Boudreau</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mastercard</td>
+                        <td data-label="Position Title">Director, Communications</td>
+                        <td data-label="First Name, Last Name">Jenn deBerge</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mastercard</td>
+                        <td data-label="Position Title">SVP, Corp Sec Program Management, Risk & Regulatory Ops</td>
+                        <td data-label="First Name, Last Name">Bonnie Leff</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Match Group, HYPERCONNECT</td>
+                        <td data-label="Position Title">Security Compliance Manager</td>
+                        <td data-label="First Name, Last Name">Changhyun Park</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Match Group, HYPERCONNECT</td>
+                        <td data-label="Position Title">Security Compliance Analyst</td>
+                        <td data-label="First Name, Last Name">Yohan Kim</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Maryville University</td>
+                        <td data-label="Position Title">Associate Dean of Technology</td>
+                        <td data-label="First Name, Last Name">Brian Gant</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mayhem Security</td>
+                        <td data-label="Position Title">CEO</td>
+                        <td data-label="First Name, Last Name">David Brumley</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">McDermott Will & Emery</td>
+                        <td data-label="Position Title">Data Security & Privacy Partner</td>
+                        <td data-label="First Name, Last Name">Stephen Reynolds</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">McDonald’s Corporation</td>
+                        <td data-label="Position Title">Senior Vice President, Chief Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Mike Gordon</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Meta</td>
+                        <td data-label="Position Title">Security Engineer</td>
+                        <td data-label="First Name, Last Name">Robin Franklin Guha</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Miggo Security</td>
+                        <td data-label="Position Title">Research Lead</td>
+                        <td data-label="First Name, Last Name">Liad Eliyahu</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Miggo Security</td>
+                        <td data-label="Position Title">CTO</td>
+                        <td data-label="First Name, Last Name">Itai Goldman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mimecast</td>
+                        <td data-label="Position Title">Chief Product Officer</td>
+                        <td data-label="First Name, Last Name">Rob Juncker</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ministry of Communications, Fiji</td>
+                        <td data-label="Position Title">Director-General, Transformation, Cybersecurity and Communications</td>
+                        <td data-label="First Name, Last Name">Tupou Baravilala</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mind Over Cyber</td>
+                        <td data-label="Position Title">Executive Director & Co-Founder</td>
+                        <td data-label="First Name, Last Name">George Kamide</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">MITRE</td>
+                        <td data-label="Position Title">Director, Center for Threat-Informed Defense</td>
+                        <td data-label="First Name, Last Name">Jon Baker</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">MITRE Trustee</td>
+                        <td data-label="Position Title">Former US National Cyber Director</td>
+                        <td data-label="First Name, Last Name">Chris Inglis</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mitiga</td>
+                        <td data-label="Position Title">CTO</td>
+                        <td data-label="First Name, Last Name">Ofer Maor</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Momentum Technology</td>
+                        <td data-label="Position Title">Managing Director</td>
+                        <td data-label="First Name, Last Name">Mary Carmichael</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Munich Re Ventures</td>
+                        <td data-label="Position Title">Investment Director</td>
+                        <td data-label="First Name, Last Name">Sidra Ahmed Lefort</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mutare, Inc</td>
+                        <td data-label="Position Title">Director of Product Development</td>
+                        <td data-label="First Name, Last Name">Brian McDonald</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Mutare, Inc.</td>
+                        <td data-label="Position Title">CTO</td>
+                        <td data-label="First Name, Last Name">Roger Northrop</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Nanyang Technology University</td>
+                        <td data-label="Position Title">Professor</td>
+                        <td data-label="First Name, Last Name">Thomas Peyrin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">National Cybersecurity Alliance</td>
+                        <td data-label="Position Title">Executive Director</td>
+                        <td data-label="First Name, Last Name">Lisa Plaggemier</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">National Retail Federation</td>
+                        <td data-label="Position Title">Vice President, Retail Technology & Cybersecurity</td>
+                        <td data-label="First Name, Last Name">Christian Beckner</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">National Security Council, The White House</td>
+                        <td data-label="Position Title">Senior Director for Cyber</td>
+                        <td data-label="First Name, Last Name">Alexei Bulazel</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Navy Federal Credit Union</td>
+                        <td data-label="Position Title">Principal, Software Security</td>
+                        <td data-label="First Name, Last Name">Brenna Leath</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">nbhd.ai</td>
+                        <td data-label="Position Title">Founder</td>
+                        <td data-label="First Name, Last Name">Sven Cattell</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NCC Group</td>
+                        <td data-label="Position Title">CTO</td>
+                        <td data-label="First Name, Last Name">Sian John</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NEC Corporation</td>
+                        <td data-label="Position Title">Researcher</td>
+                        <td data-label="First Name, Last Name">Akiko Inoue</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Nemesis Global</td>
+                        <td data-label="Position Title">CEO, CTO & Founder</td>
+                        <td data-label="First Name, Last Name">Gentry Lane</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Nestle</td>
+                        <td data-label="Position Title">IT Security & Compliance Manager</td>
+                        <td data-label="First Name, Last Name">Heather Reed</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Netskope</td>
+                        <td data-label="Position Title">CISO Advisor</td>
+                        <td data-label="First Name, Last Name">James Christiansen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Netskope</td>
+                        <td data-label="Position Title">Principal Threat Researcher</td>
+                        <td data-label="First Name, Last Name">Hubert Lin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Netskope</td>
+                        <td data-label="Position Title">Senior Director of IT Infrastructure & Operations</td>
+                        <td data-label="First Name, Last Name">Elena Matchey</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Neurofraud Consulting, LLC</td>
+                        <td data-label="Position Title">Global Marketplace Fraud Risk Intelligence & Business Strategy</td>
+                        <td data-label="First Name, Last Name">Elena Michaeli</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">New Enterprise Associates (NEA)</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Aaron Jacobson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Newell Brands</td>
+                        <td data-label="Position Title">VP & CISO</td>
+                        <td data-label="First Name, Last Name">Lee Parrish</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NGC Risk</td>
+                        <td data-label="Position Title">Principal & CISO</td>
+                        <td data-label="First Name, Last Name">Dan Gorecki</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NightDragon</td>
+                        <td data-label="Position Title">Founder & CEO</td>
+                        <td data-label="First Name, Last Name">Dave DeWalt</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NightDragon</td>
+                        <td data-label="Position Title">Managing Director</td>
+                        <td data-label="First Name, Last Name">Ken Gonzalez</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NIST</td>
+                        <td data-label="Position Title">Digital Identity Program Lead</td>
+                        <td data-label="First Name, Last Name">Ryan Galluzzo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NVISO</td>
+                        <td data-label="Position Title">Head of CSIRT at NVISO, Certified instructor at SANS Institute</td>
+                        <td data-label="First Name, Last Name">Michel Coene</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NVISO</td>
+                        <td data-label="Position Title">Co-Founder & Director, Cyber Strategy</td>
+                        <td data-label="First Name, Last Name">Vincent Defrenne</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NVISO</td>
+                        <td data-label="Position Title">Senior OT Analyst</td>
+                        <td data-label="First Name, Last Name">Nicholas Dhaeyer</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NVISO</td>
+                        <td data-label="Position Title">Senior Security Consultant</td>
+                        <td data-label="First Name, Last Name">Nick Foulon</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NVISO</td>
+                        <td data-label="Position Title">Senior Security Consultant</td>
+                        <td data-label="First Name, Last Name">Sarah Mader</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NVIDIA</td>
+                        <td data-label="Position Title">VP Software Product Security, Architecture & Research</td>
+                        <td data-label="First Name, Last Name">Daniel Rohrer</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">NowSecure</td>
+                        <td data-label="Position Title">Co-founder</td>
+                        <td data-label="First Name, Last Name">Andrew Hoog</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Numberline Security</td>
+                        <td data-label="Position Title">CEO</td>
+                        <td data-label="First Name, Last Name">Jason Garbis</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ObjectSecurity LLC</td>
+                        <td data-label="Position Title">Research Software Engineer</td>
+                        <td data-label="First Name, Last Name">Jason Kramer</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ObjectSecurity LLC</td>
+                        <td data-label="Position Title">Founder & CEO</td>
+                        <td data-label="First Name, Last Name">Ulrich Lang</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Offchain Labs</td>
+                        <td data-label="Position Title">Co-Founder and Chief Scientist</td>
+                        <td data-label="First Name, Last Name">Ed Felten</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Okta</td>
+                        <td data-label="Position Title">VP, Product Management</td>
+                        <td data-label="First Name, Last Name">Jack Hirsch</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Okta</td>
+                        <td data-label="Position Title">Senior Emerging Tech Researcher</td>
+                        <td data-label="First Name, Last Name">Fei Liu</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">OnDefend</td>
+                        <td data-label="Position Title">Program Director</td>
+                        <td data-label="First Name, Last Name">Aaron Rosenmund</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">OpenAI</td>
+                        <td data-label="Position Title">Member of Program Staff</td>
+                        <td data-label="First Name, Last Name">Ian Brelinsky</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">OpenAI</td>
+                        <td data-label="Position Title">Chief Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Matt Knight</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">OpenText</td>
+                        <td data-label="Position Title">Senior Data Scientist</td>
+                        <td data-label="First Name, Last Name">Nakkul Khuraana</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">OpenText</td>
+                        <td data-label="Position Title">Lead Data Scientist</td>
+                        <td data-label="First Name, Last Name">Hari Manassery Koduvely</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Operational Technology Cybersecurity Coalition</td>
+                        <td data-label="Position Title">Executive Director</td>
+                        <td data-label="First Name, Last Name">Tatyana Bolton</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Oracle SaaS</td>
+                        <td data-label="Position Title">VP, SaaS Information Security</td>
+                        <td data-label="First Name, Last Name">Swathi Joshi</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Orrick Herrington & Sutcliffe LLP</td>
+                        <td data-label="Position Title">Partner, Global Head, Digital Commerce & Gaming</td>
+                        <td data-label="First Name, Last Name">Behnam Dayanim</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">OWASP Gen AI Security Project</td>
+                        <td data-label="Position Title">Co-chair, Board of Directors</td>
+                        <td data-label="First Name, Last Name">Scott Clinton</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">OX Security</td>
+                        <td data-label="Position Title">Security Research Team Lead, Data Scientist</td>
+                        <td data-label="First Name, Last Name">Liad Cohen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">OX Security</td>
+                        <td data-label="Position Title">VP of Research</td>
+                        <td data-label="First Name, Last Name">Eyal Paz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Paladin Capital Group</td>
+                        <td data-label="Position Title">Venture Partner</td>
+                        <td data-label="First Name, Last Name">Jamil Jaffer</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Palo Alto Networks</td>
+                        <td data-label="Position Title">Security Researcher</td>
+                        <td data-label="First Name, Last Name">Asher Davila</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Palo Alto Networks</td>
+                        <td data-label="Position Title">Vice President, Public Sector</td>
+                        <td data-label="First Name, Last Name">John Davis</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Palo Alto Networks</td>
+                        <td data-label="Position Title">Senior Threat Researcher</td>
+                        <td data-label="First Name, Last Name">Tom Fakterman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Palo Alto Networks</td>
+                        <td data-label="Position Title">Threat Research Team Lead</td>
+                        <td data-label="First Name, Last Name">Daniel Frank</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Palo Alto Networks, Unit 42</td>
+                        <td data-label="Position Title">Principal Researcher</td>
+                        <td data-label="First Name, Last Name">Nathaniel Quist</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Paul Weiss</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">John Carlin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Pax8</td>
+                        <td data-label="Position Title">Security & Compliance Senior Director</td>
+                        <td data-label="First Name, Last Name">Matt Lee</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Pentera</td>
+                        <td data-label="Position Title">Field CISO</td>
+                        <td data-label="First Name, Last Name">Jason Mar-Tang</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Physical Security Village</td>
+                        <td data-label="Position Title">Security Consultant</td>
+                        <td data-label="First Name, Last Name">Terry Luan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Physical Security Village</td>
+                        <td data-label="Position Title">Volunteer Coordinator</td>
+                        <td data-label="First Name, Last Name">Karen Ng</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Pine Risk Management</td>
+                        <td data-label="Position Title">Chief Executive Officer</td>
+                        <td data-label="First Name, Last Name">Ana Aslanishvili</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">PixelFire</td>
+                        <td data-label="Position Title">Cybersecurity Executive</td>
+                        <td data-label="First Name, Last Name">Stirling Goetz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Pluralsight</td>
+                        <td data-label="Position Title">Director of Curriculum, Cybersecurity & IT Operations</td>
+                        <td data-label="First Name, Last Name">Bri Frost</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">PNG Department of ICT</td>
+                        <td data-label="Position Title">Permanent Secretary</td>
+                        <td data-label="First Name, Last Name">Steven Matainaho</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Politico</td>
+                        <td data-label="Position Title">Cybersecurity Reporter</td>
+                        <td data-label="First Name, Last Name">Maggie Miller</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Presidency of Brazil</td>
+                        <td data-label="Position Title">Secretary of Cybersecurity and Information Security</td>
+                        <td data-label="First Name, Last Name">Andre Bandeira Molina</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">PrimeHarbor Technologies</td>
+                        <td data-label="Position Title">Consultant & Cloud Security Evangelist</td>
+                        <td data-label="First Name, Last Name">Chris Farris</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Process Improvement Achievers LLC</td>
+                        <td data-label="Position Title">Chief Security Officer</td>
+                        <td data-label="First Name, Last Name">Rick Mellendick</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Protect AI</td>
+                        <td data-label="Position Title">Tech Lead Manager</td>
+                        <td data-label="First Name, Last Name">William Armiros</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Protect AI</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Diana Kelley</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Purdue University and Georgia Institute of Technology</td>
+                        <td data-label="Position Title">Postdoctoral Researcher</td>
+                        <td data-label="First Name, Last Name">Xiangyu Liu</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Purple Perimeter Security LLC</td>
+                        <td data-label="Position Title">CSO</td>
+                        <td data-label="First Name, Last Name">Carolann Jacobs</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Qualys</td>
+                        <td data-label="Position Title">Principal Product Manager</td>
+                        <td data-label="First Name, Last Name">April Lenhard</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Qubric Security</td>
+                        <td data-label="Position Title">Co-Founder</td>
+                        <td data-label="First Name, Last Name">Rachel Bierner</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Qubric Security</td>
+                        <td data-label="Position Title">Co-Founder</td>
+                        <td data-label="First Name, Last Name">Cora Quon</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Rapid7</td>
+                        <td data-label="Position Title">Sr. Dir. Threat Analytics</td>
+                        <td data-label="First Name, Last Name">Christiaan Beek</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">RangersAI</td>
+                        <td data-label="Position Title">CEO</td>
+                        <td data-label="First Name, Last Name">Ayelet Biger-Levin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Recorded Future</td>
+                        <td data-label="Position Title">Threat Intelligence Analyst</td>
+                        <td data-label="First Name, Last Name">Alexander Leslie</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Recorded Future</td>
+                        <td data-label="Position Title">Ransomware Sommelier</td>
+                        <td data-label="First Name, Last Name">Allan Liska</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Red Cell Parters, LLC</td>
+                        <td data-label="Position Title">President, Cyber Practice</td>
+                        <td data-label="First Name, Last Name">George Barnes</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Refine Intelligence</td>
+                        <td data-label="Position Title">CEO & Co-Founder</td>
+                        <td data-label="First Name, Last Name">Uri Rivner</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Realm Labs</td>
+                        <td data-label="Position Title">Head of Engineering</td>
+                        <td data-label="First Name, Last Name">Akash Mukherjee</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Roche</td>
+                        <td data-label="Position Title">Director of DevSecOps</td>
+                        <td data-label="First Name, Last Name">Kayra Otaner</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">RSAC</td>
+                        <td data-label="Position Title">Technical Director</td>
+                        <td data-label="First Name, Last Name">Armin Buescher</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">RSAC</td>
+                        <td data-label="Position Title">Vice President, Innovation & Scholars</td>
+                        <td data-label="First Name, Last Name">Cecilia Marinier</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">RSAC</td>
+                        <td data-label="Position Title">Research Director</td>
+                        <td data-label="First Name, Last Name">Dan Marino</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">RSAC</td>
+                        <td data-label="Position Title">Principal Researcher</td>
+                        <td data-label="First Name, Last Name">Dario Pasquini</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Rubrik</td>
+                        <td data-label="Position Title">Head of Rubrik Zero Labs</td>
+                        <td data-label="First Name, Last Name">Joe Hladik</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Rubrik</td>
+                        <td data-label="Position Title">Senior Director, Product Management</td>
+                        <td data-label="First Name, Last Name">Hema Mohan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ruhr University Bochum</td>
+                        <td data-label="Position Title">Research Assistant</td>
+                        <td data-label="First Name, Last Name">Fabian Bäumer</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ruth Hill Bro</td>
+                        <td data-label="Position Title">Privacy & Cybersecurity Attorney</td>
+                        <td data-label="First Name, Last Name">Ruth Bro</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SA Power Networks</td>
+                        <td data-label="Position Title">Cyber Security Operations Manager</td>
+                        <td data-label="First Name, Last Name">Lindbergh Caldeira</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SA Power Networks</td>
+                        <td data-label="Position Title">Senior Cybersecurity Analyst</td>
+                        <td data-label="First Name, Last Name">Ben Cooper</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SandboxAQ</td>
+                        <td data-label="Position Title">Staff Research Scientist</td>
+                        <td data-label="First Name, Last Name">James Howe</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">San Francisco District Attorney's Office</td>
+                        <td data-label="Position Title">CIO</td>
+                        <td data-label="First Name, Last Name">Herman Brown</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SANS Institute</td>
+                        <td data-label="Position Title">DFIR Curriculum Lead and Sr. Director</td>
+                        <td data-label="First Name, Last Name">Heather Barnhart</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SANS Institute</td>
+                        <td data-label="Position Title">ICS Curriculum Lead</td>
+                        <td data-label="First Name, Last Name">tim conway</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SANS Institute</td>
+                        <td data-label="Position Title">Certified Instructor & Course Author</td>
+                        <td data-label="First Name, Last Name">Mattia Epifani</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SANS Institute</td>
+                        <td data-label="Position Title">Senior Instructor</td>
+                        <td data-label="First Name, Last Name">Eric Johnson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SANS Institute</td>
+                        <td data-label="Position Title">Principal Instructor</td>
+                        <td data-label="First Name, Last Name">Jason Lam</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SANS Institute</td>
+                        <td data-label="Position Title">Chief of Research & Head of Faculty</td>
+                        <td data-label="First Name, Last Name">Rob T Lee</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SANS Institute</td>
+                        <td data-label="Position Title">Instructor & Course Author</td>
+                        <td data-label="First Name, Last Name">Shaun McCullough</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SANS, Cyverity</td>
+                        <td data-label="Position Title">Principal Instructor, Managing Partner</td>
+                        <td data-label="First Name, Last Name">Russell Eubanks</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Saviynt</td>
+                        <td data-label="Position Title">Chief Trust Officer</td>
+                        <td data-label="First Name, Last Name">Jim Routh</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Schneider Ele</td>
+                        <td data-label="Position Title">Vice President, Global Digital Policy</td>
+                        <td data-label="First Name, Last Name">Trevor Rudolph</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Schneider Electric</td>
+                        <td data-label="Position Title">VP, Supply Chain Security</td>
+                        <td data-label="First Name, Last Name">Cassie Crossley</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SCYTHE</td>
+                        <td data-label="Position Title">Lead Adversary Emulation Engineer</td>
+                        <td data-label="First Name, Last Name">Trey Bilbrey</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SCYTHE</td>
+                        <td data-label="Position Title">Founder & CEO</td>
+                        <td data-label="First Name, Last Name">Bryson Bort</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Sealed Air</td>
+                        <td data-label="Position Title">Global CISO</td>
+                        <td data-label="First Name, Last Name">Torrell Funderburk</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Security Architecture Consulting</td>
+                        <td data-label="Position Title">Cloud Security Architect</td>
+                        <td data-label="First Name, Last Name">Mark Buckwell</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Secure Yeti</td>
+                        <td data-label="Position Title">CTO & CISO</td>
+                        <td data-label="First Name, Last Name">Steve Fink</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Semgrep</td>
+                        <td data-label="Position Title">Staff DevRel</td>
+                        <td data-label="First Name, Last Name">Tanya Janca</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Semperis</td>
+                        <td data-label="Position Title">Principal Technologist</td>
+                        <td data-label="First Name, Last Name">Guido Grillenmeier</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SentinelOne</td>
+                        <td data-label="Position Title">Americas Field CTO</td>
+                        <td data-label="First Name, Last Name">Dave Gold</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SentiLink</td>
+                        <td data-label="Position Title">Head of Fraud Insights</td>
+                        <td data-label="First Name, Last Name">David Maimon</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Senticon Security</td>
+                        <td data-label="Position Title">Founder</td>
+                        <td data-label="First Name, Last Name">John Masserini</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Shandong University</td>
+                        <td data-label="Position Title">Student</td>
+                        <td data-label="First Name, Last Name">Chengcheng Chang</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Shandong University</td>
+                        <td data-label="Position Title">Masters Student</td>
+                        <td data-label="First Name, Last Name">Kuntong Li</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Shandong University</td>
+                        <td data-label="Position Title">PhD Student, School of Cyber Science and Technology</td>
+                        <td data-label="First Name, Last Name">Shuo Peng</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Sightline Security and OISF</td>
+                        <td data-label="Position Title">Chief Trailblazer & President</td>
+                        <td data-label="First Name, Last Name">Kelley Misata</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Silver Buckshot Ventures</td>
+                        <td data-label="Position Title">Cybersecurity Author, Investor & Advisor</td>
+                        <td data-label="First Name, Last Name">Nicole Perlroth</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Silverado Policy Accelerator</td>
+                        <td data-label="Position Title">Executive Chairman</td>
+                        <td data-label="First Name, Last Name">Dmitri Alperovitch</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Silverado Policy Accelerator</td>
+                        <td data-label="Position Title">Chief of Staff</td>
+                        <td data-label="First Name, Last Name">Marc Raimondi</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SimSpace</td>
+                        <td data-label="Position Title">Director of Product Marketing</td>
+                        <td data-label="First Name, Last Name">Ashley Baich</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Singulr AI</td>
+                        <td data-label="Position Title">Chief Security Officer</td>
+                        <td data-label="First Name, Last Name">Richard Bird</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SoFi</td>
+                        <td data-label="Position Title">Cybersecurity Architect</td>
+                        <td data-label="First Name, Last Name">Sandeep Jayashankar</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SoFi</td>
+                        <td data-label="Position Title">Director of Product Security</td>
+                        <td data-label="First Name, Last Name">Pritam Mungse</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SolarWinds</td>
+                        <td data-label="Position Title">Chief Information Security Officer</td>
+                        <td data-label="First Name, Last Name">Tim Brown</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SonicWall</td>
+                        <td data-label="Position Title">Instructor, SANS; Executive Director Threat Research</td>
+                        <td data-label="First Name, Last Name">Douglas McKee</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Sony Music Publishing</td>
+                        <td data-label="Position Title">Sr. Director, Global Information Security</td>
+                        <td data-label="First Name, Last Name">Harry Halikias</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Sonatype</td>
+                        <td data-label="Position Title">Back-End Data Engineer</td>
+                        <td data-label="First Name, Last Name">Trevor Madge</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Spades Institute</td>
+                        <td data-label="Position Title">Founder</td>
+                        <td data-label="First Name, Last Name">Vishal Amin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Spartan Corp</td>
+                        <td data-label="Position Title">Space Asset Security Architect</td>
+                        <td data-label="First Name, Last Name">Barbara Grofe</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Splunk</td>
+                        <td data-label="Position Title">GVP, Global Cyber Strategy</td>
+                        <td data-label="First Name, Last Name">David Dalling</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Splunk, a Cisco First Name, Last Name</td>
+                        <td data-label="Position Title">SVP & GM, Security Products</td>
+                        <td data-label="First Name, Last Name">Mike Horn</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SpyderSec</td>
+                        <td data-label="Position Title">CEO</td>
+                        <td data-label="First Name, Last Name">Serge Borso</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SquareX</td>
+                        <td data-label="Position Title">Founder & CEO</td>
+                        <td data-label="First Name, Last Name">Vivek Ramachandran</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Stealth Startup</td>
+                        <td data-label="Position Title">COO</td>
+                        <td data-label="First Name, Last Name">Jaya Baloo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Stewart Baker Consulting PLLC</td>
+                        <td data-label="Position Title">Principal</td>
+                        <td data-label="First Name, Last Name">Stewart Baker</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Stony Brook University</td>
+                        <td data-label="Position Title">Cybersecurity Analyst</td>
+                        <td data-label="First Name, Last Name">Brian Kondracki</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Superior Court of California, County of San Diego</td>
+                        <td data-label="Position Title">Trial Judge</td>
+                        <td data-label="First Name, Last Name">Yvonne Campos</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SWA Law LLC d/b/a and LegallyCyber.com</td>
+                        <td data-label="Position Title">Founder & Attorney</td>
+                        <td data-label="First Name, Last Name">Sarah Anderson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SYN Ventures</td>
+                        <td data-label="Position Title">Managing Partner & Co-Founder</td>
+                        <td data-label="First Name, Last Name">Jay Leek</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">SYN Ventures</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Tim McKnight</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">TAG and NYU</td>
+                        <td data-label="Position Title">Founder & CEO, Research Professor</td>
+                        <td data-label="First Name, Last Name">Edward Amoroso</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">TAL Global Corporation</td>
+                        <td data-label="Position Title">General Counsel</td>
+                        <td data-label="First Name, Last Name">Larry Dietz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Target</td>
+                        <td data-label="Position Title">Director</td>
+                        <td data-label="First Name, Last Name">Sydney Delp</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Target Corporation</td>
+                        <td data-label="Position Title">Sr. Director Threat Detection, Fraud & Abuse</td>
+                        <td data-label="First Name, Last Name">Evan Gaustad</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">TCG</td>
+                        <td data-label="Position Title">CTO</td>
+                        <td data-label="First Name, Last Name">Robert Buccigrossi</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">TD Bank</td>
+                        <td data-label="Position Title">Head of Customer Authentication (CIAM)</td>
+                        <td data-label="First Name, Last Name">Ruchira Ghosh</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Technical University Braunschweig</td>
+                        <td data-label="Position Title">Research Assistant & PhD Candidate</td>
+                        <td data-label="First Name, Last Name">Robin Kirchner</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Temple University</td>
+                        <td data-label="Position Title">Professor and Director of the Cyber DIA Program</td>
+                        <td data-label="First Name, Last Name">Derek Fisher</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Tenable</td>
+                        <td data-label="Position Title">CIO</td>
+                        <td data-label="First Name, Last Name">Patricia Grant</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ten Eleven Ventures</td>
+                        <td data-label="Position Title">Board Member</td>
+                        <td data-label="First Name, Last Name">Grace Cassy</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Ten Eleven Ventures</td>
+                        <td data-label="Position Title">Founder & Managing General Partner</td>
+                        <td data-label="First Name, Last Name">Alex Doll</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Teramind</td>
+                        <td data-label="Position Title">VP of Product</td>
+                        <td data-label="First Name, Last Name">David Pinckard</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">The CISO Law Firm</td>
+                        <td data-label="Position Title">Attorney & Privacy Law Specialist</td>
+                        <td data-label="First Name, Last Name">David Patariu</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">The CISO Law Firm PLLC</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">John Barker</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">The CISO Law Firm PLLC</td>
+                        <td data-label="Position Title">Partner and Co-Founder</td>
+                        <td data-label="First Name, Last Name">Scott Giordano</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">The Cyber Security Council</td>
+                        <td data-label="Position Title">Cyber Advisor & Cybersecurity Podcaster</td>
+                        <td data-label="First Name, Last Name">Scott Brammer</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">The Global Forum on Cyber Expertise Foundation</td>
+                        <td data-label="Position Title">Former President</td>
+                        <td data-label="First Name, Last Name">Chris Painter</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">The MITRE Corp.</td>
+                        <td data-label="Position Title">SVP, Operations and Outreach | Chief Legal Officer</td>
+                        <td data-label="First Name, Last Name">Julie Bowen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">The University of Electro-Communications</td>
+                        <td data-label="Position Title">PhD Student</td>
+                        <td data-label="First Name, Last Name">Kyoichi Asano</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">The Wall Street Journal</td>
+                        <td data-label="Position Title">Reporter</td>
+                        <td data-label="First Name, Last Name">Robert McMillan</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Thirdscore</td>
+                        <td data-label="Position Title">Co-Founder & CEO</td>
+                        <td data-label="First Name, Last Name">Shannon Lietz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Thoma Bravo</td>
+                        <td data-label="Position Title">Vice President</td>
+                        <td data-label="First Name, Last Name">Collin Gallagher</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">ThreatFabric</td>
+                        <td data-label="Position Title">VP, Fraud Engineering</td>
+                        <td data-label="First Name, Last Name">Eward Driehuis</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Tides Foundation</td>
+                        <td data-label="Position Title">Senior Advisor, Corporate Social Impact</td>
+                        <td data-label="First Name, Last Name">Erin Ceynar</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Tiro Security</td>
+                        <td data-label="Position Title">CEO & Founder</td>
+                        <td data-label="First Name, Last Name">Kris Rides</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Toast, Inc.</td>
+                        <td data-label="Position Title">Director of Information Security Programs</td>
+                        <td data-label="First Name, Last Name">David Kosorok</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Toyohashi University of Technology</td>
+                        <td data-label="Position Title">Assistant Professor</td>
+                        <td data-label="First Name, Last Name">Takeshi Nakai</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Trellix</td>
+                        <td data-label="Position Title">Head of Security Shared Services</td>
+                        <td data-label="First Name, Last Name">Lili Ana</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Trellix</td>
+                        <td data-label="Position Title">Head of Threat Intelligence</td>
+                        <td data-label="First Name, Last Name">John Fokker</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Trend Micro</td>
+                        <td data-label="Position Title">Senior Threat Researcher</td>
+                        <td data-label="First Name, Last Name">Philippe Lin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Trend Micro, Inc.</td>
+                        <td data-label="Position Title">Security Researcher</td>
+                        <td data-label="First Name, Last Name">Josiah Hagen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Troutman Pepper Locke</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Ron Raether</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Truist</td>
+                        <td data-label="Position Title">SVP, Head of Fraud Solutions and Controls</td>
+                        <td data-label="First Name, Last Name">Jamey Boone</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">TrustNet</td>
+                        <td data-label="Position Title">CISO & Founder</td>
+                        <td data-label="First Name, Last Name">Trevor Horwitz</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">TrustNet</td>
+                        <td data-label="Position Title">CTO</td>
+                        <td data-label="First Name, Last Name">Mike Kerem</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">TrustedSec</td>
+                        <td data-label="Position Title">Identity Security Architect</td>
+                        <td data-label="First Name, Last Name">Sean Metcalf</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Tutamantic_Sec</td>
+                        <td data-label="Position Title">Director and Inventor</td>
+                        <td data-label="First Name, Last Name">Geoffrey Hill</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">UC Berkeley</td>
+                        <td data-label="Position Title">Non-resident Research Scholar</td>
+                        <td data-label="First Name, Last Name">Gil Baram</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">UNC Charlotte</td>
+                        <td data-label="Position Title">Part-Time Faculty</td>
+                        <td data-label="First Name, Last Name">Lily Gross</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">University of Denver</td>
+                        <td data-label="Position Title">Psychology Doctorate (PsyD) Candidate</td>
+                        <td data-label="First Name, Last Name">Xavier Bird</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">University of Waterloo</td>
+                        <td data-label="Position Title">Research Professor</td>
+                        <td data-label="First Name, Last Name">Maura Grossman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Upwork</td>
+                        <td data-label="Position Title">Director, Trust & Safety Intelligence & Investigations</td>
+                        <td data-label="First Name, Last Name">Chris Horne</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">US Bank</td>
+                        <td data-label="Position Title">Chief Cyber Security and Technology Counsel</td>
+                        <td data-label="First Name, Last Name">Alison Atkins</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">U.S. Department of Homeland Security</td>
+                        <td data-label="Position Title">Secretary of Homeland Security</td>
+                        <td data-label="First Name, Last Name">Kristi Noem</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">US District Court, Northern District of California</td>
+                        <td data-label="Position Title">United States Magistrate Judge</td>
+                        <td data-label="First Name, Last Name">Laurel Beeler</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">U.S. District Court, Southern District of California</td>
+                        <td data-label="Position Title">Magistrate Judge</td>
+                        <td data-label="First Name, Last Name">Ali Goddard</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">US House of Representatives</td>
+                        <td data-label="Position Title">Staff Director (Minority), Subcommittee on Cybersecurity and Infrastructure Protection</td>
+                        <td data-label="First Name, Last Name">Moira Bergin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">US National Institute of Standards and Technology</td>
+                        <td data-label="Position Title">Program Manager, Cybersecurity, Privacy & AI</td>
+                        <td data-label="First Name, Last Name">Kat Megas</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">US Treasury</td>
+                        <td data-label="Position Title">Chief AI Officer & Deputy Assistant Secretary</td>
+                        <td data-label="First Name, Last Name">Todd Conklin</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Vanderbilt University</td>
+                        <td data-label="Position Title">Director, Institute of National Security</td>
+                        <td data-label="First Name, Last Name">Paul Nakasone</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Venable LLP</td>
+                        <td data-label="Position Title">Senior Director, Global Security & Technology Strategy</td>
+                        <td data-label="First Name, Last Name">Belisario Contreras</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Verinext</td>
+                        <td data-label="Position Title">Director, Identity Services & Solutions</td>
+                        <td data-label="First Name, Last Name">Jerry Chapman</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Verisign</td>
+                        <td data-label="Position Title">Senior Vice President and CTO</td>
+                        <td data-label="First Name, Last Name">Burt Kaliski</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Verizon Business</td>
+                        <td data-label="Position Title">DBIR Author</td>
+                        <td data-label="First Name, Last Name">Philippe Langlois</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Verizon Business</td>
+                        <td data-label="Position Title">VP, Global Cybersecurity Solutions</td>
+                        <td data-label="First Name, Last Name">Chris Novak</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Verizon Business</td>
+                        <td data-label="Position Title">Associate Director of Threat Intelligence</td>
+                        <td data-label="First Name, Last Name">Alex Pinto</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Varonis</td>
+                        <td data-label="Position Title">Vice President, Incident Response & Cloud Operations</td>
+                        <td data-label="First Name, Last Name">Matthew Radolec</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Visa Research</td>
+                        <td data-label="Position Title">Staff Research Scientist</td>
+                        <td data-label="First Name, Last Name">Duc Le</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Virtru</td>
+                        <td data-label="Position Title">Co-founder & CTO</td>
+                        <td data-label="First Name, Last Name">Will Ackerly</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Virtru</td>
+                        <td data-label="Position Title">Senior Vice President, Product & Engineering</td>
+                        <td data-label="First Name, Last Name">Dana Morris</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Viszen Security | CISO Launch</td>
+                        <td data-label="Position Title">Principal Security Advisor</td>
+                        <td data-label="First Name, Last Name">Jennifer (JJ) Minella</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Vista Equity Partners</td>
+                        <td data-label="Position Title">CISO</td>
+                        <td data-label="First Name, Last Name">Adrian Peters</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Vodafone</td>
+                        <td data-label="Position Title">Head of Global Cyber Strategy & Secure by Design</td>
+                        <td data-label="First Name, Last Name">Paul Hopkins</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Walmart</td>
+                        <td data-label="Position Title">Global Vice President, Security Operations</td>
+                        <td data-label="First Name, Last Name">Jason O'Dell</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">W2 Communications</td>
+                        <td data-label="Position Title">Chief Strategy Officer</td>
+                        <td data-label="First Name, Last Name">Jennifer Leggio</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Weizmann Institute of Science</td>
+                        <td data-label="Position Title">PhD Student</td>
+                        <td data-label="First Name, Last Name">Hila Dahari-Garbian</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Wells Fargo</td>
+                        <td data-label="Position Title">Assistant General Counsel, Executive Director - Cybersecurity and Incident Response</td>
+                        <td data-label="First Name, Last Name">Matthew Greenberg</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Westphalian Univ. of Applied Sciences Gelsenkirchen</td>
+                        <td data-label="Position Title">Project Director</td>
+                        <td data-label="First Name, Last Name">Ursula Coester</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">WideField Security</td>
+                        <td data-label="Position Title">Threat Research</td>
+                        <td data-label="First Name, Last Name">Jenko Hwong</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Wiley Rein LLP</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Lyn Brown</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">WilmerHale</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Matt Jones</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Wiz</td>
+                        <td data-label="Position Title">Security Researcher</td>
+                        <td data-label="First Name, Last Name">Hillai Ben-Sasson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Wiz</td>
+                        <td data-label="Position Title">Global Head of Government Affairs</td>
+                        <td data-label="First Name, Last Name">Mitch Herckis</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Wiz</td>
+                        <td data-label="Position Title">Director, Cloud Response</td>
+                        <td data-label="First Name, Last Name">Yotam Meitar</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">WM</td>
+                        <td data-label="Position Title">Senior Director, Digital</td>
+                        <td data-label="First Name, Last Name">Sohil Merchant</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Womble Bond Dickinson (US) LLP</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Ted Claypoole</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Women in CyberSecurity (WiCyS)</td>
+                        <td data-label="Position Title">Executive Director</td>
+                        <td data-label="First Name, Last Name">Lynn Dohm</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Women in Security and Privacy</td>
+                        <td data-label="Position Title">Board Member/Events Liaison</td>
+                        <td data-label="First Name, Last Name">Alyssa Coley</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">World Economic Forum Centre for Cybersecurity</td>
+                        <td data-label="Position Title">Head of Strategy</td>
+                        <td data-label="First Name, Last Name">Tal Goldstein</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">World Wide Technology</td>
+                        <td data-label="Position Title">Technical Solutions Architect</td>
+                        <td data-label="First Name, Last Name">Niki Portell</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">YL Ventures</td>
+                        <td data-label="Position Title">Partner</td>
+                        <td data-label="First Name, Last Name">Andy Ellis</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">YL Ventures</td>
+                        <td data-label="Position Title">Managing Partner</td>
+                        <td data-label="First Name, Last Name">Yoav Leitersdorf</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Youtube.com/JimBrowning</td>
+                        <td data-label="Position Title">YouTuber</td>
+                        <td data-label="First Name, Last Name">Jim Browning</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Yubico</td>
+                        <td data-label="Position Title">Solutions Artichect</td>
+                        <td data-label="First Name, Last Name">Josh Cigna</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Zama</td>
+                        <td data-label="Position Title">Fellow Cryptography Researcher</td>
+                        <td data-label="First Name, Last Name">Benoit Libert</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Zenity</td>
+                        <td data-label="Position Title">Co-Founder & CTO</td>
+                        <td data-label="First Name, Last Name">Michael Bargury</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Zhejiang University</td>
+                        <td data-label="Position Title">Student</td>
+                        <td data-label="First Name, Last Name">Jiayi Ai</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Zipline</td>
+                        <td data-label="Position Title">Application Security Engineer</td>
+                        <td data-label="First Name, Last Name">Kalyani Pawar</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">Zolder</td>
+                        <td data-label="Position Title">Hacker</td>
+                        <td data-label="First Name, Last Name">Wesley Neelen</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer">1Password</td>
+                        <td data-label="Position Title">Senior Research Initiatives Director</td>
+                        <td data-label="First Name, Last Name">Wendy Nather</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer"></td>
+                        <td data-label="Position Title">Actor/Director</td>
+                        <td data-label="First Name, Last Name">Bryce Dallas Howard</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer"></td>
+                        <td data-label="Position Title">Cybersecurity Executive</td>
+                        <td data-label="First Name, Last Name">Erin Joe</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer"></td>
+                        <td data-label="Position Title">2X NBA Hall of Famer, Entrepreneur, and Philanthropist</td>
+                        <td data-label="First Name, Last Name">Earvin "Magic" Johnson</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer"></td>
+                        <td data-label="Position Title">Former Director, Cybersecurity & Infrastructure Security Agency (CISA)</td>
+                        <td data-label="First Name, Last Name">Chris Krebs</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer"></td>
+                        <td data-label="Position Title">Leader of the Global Cybersecurity & Data Privacy Practice & National Security Practice</td>
+                        <td data-label="First Name, Last Name">Mayer Brown</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Employer"></td>
+                        <td data-label="Position Title">Academy Award-Winning Filmmaker</td>
+                        <td data-label="First Name, Last Name">Ron Howard</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
